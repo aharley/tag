@@ -137,14 +137,8 @@ def run_subseq(model, rgbs, prompts, xys_e, vis_e, itr, ara, sw=None):
         prompts_local_ = F.max_pool2d(prompts_local_, kernel_size=prompt_stride, stride=prompt_stride)
         prompts_local = prompts_local_.reshape(B,S,1,cH//prompt_stride,cW//prompt_stride)
 
-    xys_e_local, ltrbs_e_local, vis_e_local, all_heats_e_local = model(
-        rgbs_local,
-        prompts_local,
-        offsets_local,
-        sw=None,
-        is_training=False,
-        hard=True,
-    )
+    xys_e_local, ltrbs_e_local, vis_e_local, all_heats_e_local = model(rgbs_local, prompts_local)
+    
     xy_heats_e_local = all_heats_e_local[:,:,0:1]
     obj_heats_e_local = all_heats_e_local[:,:,1:2]
     amo_heats_e_local = all_heats_e_local[:,:,2:3]

@@ -1,12 +1,21 @@
 # TAG: Tracking at Any Granularity
 
-This is the in-progress code release for our paper, "TAG: Tracking at Any Granuluarity". **[[Paper](https://adamharley.com/tag/tag_draft.pdf)] [[Project Page](https://adamharley.com/tag/)]**
+This is the in-progress code release for our paper, "TAG: Tracking at Any Granularity". **[[Paper](https://adamharley.com/tag/tag_draft.pdf)] [[Project Page](https://adamharley.com/tag/)]**
 
 <img src='https://adamharley.com/tag/images/tag_zoom.gif'>
 
 This repo will be populated with demos, evaluation scripts, dataset parsers, dataset preprocessors, and training scripts, in the weeks to come. 
 
 Please contact Adam with anything urgent (or exciting), or open a git issue.
+
+
+## Basic functionality
+
+Provide the model with a sequence of images (3 channels) and a sequence of prompts (1 channel; usually only one of these has non-zero values), and the model will return a trajectory of coordinates, a trajectory of boxes, per-frame visibility scores, and per-frame heatmaps for multi-granularity tracking/segmentation.
+
+```
+xys_e, bboxes_e, vis_e, heatmaps_e = model(rgbs, prompts)
+```
 
 
 ## Citation
