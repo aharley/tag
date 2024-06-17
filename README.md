@@ -4,9 +4,10 @@ This is the in-progress code release for our paper, "TAG: Tracking at Any Granul
 
 <img src='https://adamharley.com/tag/images/tag_zoom.gif'>
 
-The release of this project is still in progress.
+This repo will be populated with demos, evaluation scripts, dataset parsers, dataset preprocessors, and training scripts, in the weeks to come. 
 
 Please contact Adam with anything urgent (or exciting), or open a git issue.
+
 
 ## Citation
 
